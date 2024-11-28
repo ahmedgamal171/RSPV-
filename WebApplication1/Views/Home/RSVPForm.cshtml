@@ -1,0 +1,52 @@
+﻿@model WebApplication1.Models.GuestResponse
+@{
+    Layout = null;
+
+}
+<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title>RSVP Form</title>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        </head>
+    <link rel="stylesheet" href="/css/Validations.css"/>
+
+    <body>
+        <div>
+         <div class="card border-success mb-3">
+            <div class="card-header bg-success text-white text-center"><h4>RSVP</h4></div>
+            <div class="card-body">
+                    <form asp-action="RSVPForm" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <div>
+                        <p>
+                            <label asp-for="Name">Your Name:</label>
+                            <input class="form-control" asp-for="Name" />
+                        </p>
+                        </div>
+                        <div>
+                        <p>
+                            <label asp-for="Email">Email:</label>
+                            <input  class="form-control" asp-for="Email" />
+                        </p>
+                        </div>
+                        <p>
+                            <label asp-for="Phone">Phone:</label>
+                            <input  class="form-control"  asp-for="Phone"/>
+                        </p>
+                        <p>
+                            <label>Will you attend?</label>
+                            <select class="form-control"  asp-for="WillAttend">
+                                <option value="">Choose an option</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </p>
+
+                         <div class="text-center">
+                        <button class="btn btn-primary"  type="submit">Submit Form</button>
+                        </div>
+                    </form>
+    </div>
+    </div>
+    </div>
+    </body>
+</html>
